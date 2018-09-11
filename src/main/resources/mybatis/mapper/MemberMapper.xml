@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mypatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.newer.springbootmember2.mapper.MemberMapper">
+
+    <select id="findMemberParam" resultType="member">
+        select *from t_member
+        <where>
+            <if test="mName !=null and mName !=''">
+                and m_name like concat('%',#{mName},'%')
+            </if>
+            <if test="mCardNo != null and mCardNo != ''">
+                and m_card_no = #{mCardNo}
+            </if>
+        </where>
+    </select>
+</mapper>

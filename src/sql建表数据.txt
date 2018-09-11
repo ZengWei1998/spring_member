@@ -1,0 +1,14 @@
+create table t_member
+(
+	m_id int(8) auto_increment
+		primary key,
+	m_name varchar(60) not null,
+	m_phone varchar(30) not null,
+	m_level int(1) not null,
+	m_card_no varchar(10) not null,
+	m_in_time date not null,
+	constraint t_member_m_card_no_uindex
+		unique (m_card_no)
+)
+;
+
